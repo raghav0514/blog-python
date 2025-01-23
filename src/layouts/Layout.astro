@@ -1,0 +1,319 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Learn Python programming from scratch with our comprehensive tutorial series. Perfect for beginners!" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} - Python Tutorial Blog</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Google AdSense -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-CLIENT-ID"
+     crossorigin="anonymous"></script>
+		
+		<!-- Privacy Policy & Terms Links (Required for AdSense) -->
+		<link rel="privacy-policy" href="/privacy-policy">
+		<link rel="terms-of-service" href="/terms-of-service">
+	</head>
+	<body>
+		<header class="header">
+			<nav>
+				<div class="container">
+					<a href="/" class="logo">
+						<span class="logo-icon">🐍</span>
+						<span class="logo-text">Python<span class="text-gradient">Tutorial</span></span>
+					</a>
+					<div class="nav-links">
+						<a href="/">Home</a>
+						<a href="/privacy-policy">Privacy Policy</a>
+						<a href="/terms-of-service">Terms</a>
+						<a href="/blog/introduction-to-python" class="cta-button">Start Learning</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Top Ad Slot -->
+		<div class="ad-container top-ad">
+			<div class="ad-label">Advertisement</div>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="YOUR-CLIENT-ID"
+				data-ad-slot="YOUR-AD-SLOT"
+				data-ad-format="auto"
+				data-full-width-responsive="true"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+
+		<slot />
+
+		<!-- Bottom Ad Slot -->
+		<div class="ad-container bottom-ad">
+			<div class="ad-label">Advertisement</div>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="YOUR-CLIENT-ID"
+				data-ad-slot="YOUR-AD-SLOT"
+				data-ad-format="auto"
+				data-full-width-responsive="true"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>Python Tutorial</h3>
+						<p>Learn Python programming from scratch with our comprehensive tutorial series.</p>
+					</div>
+					<div class="footer-section">
+						<h3>Quick Links</h3>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/blog/introduction-to-python">Start Learning</a></li>
+							<li><a href="/privacy-policy">Privacy Policy</a></li>
+							<li><a href="/terms-of-service">Terms of Service</a></li>
+							<li><a href="/contact">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h3>Legal</h3>
+						<ul>
+							<li><a href="/privacy-policy">Privacy Policy</a></li>
+							<li><a href="/terms-of-service">Terms of Service</a></li>
+							<li><a href="/cookie-policy">Cookie Policy</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2024 Python Tutorial Blog. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary-color: #2563eb;
+		--primary-dark: #1d4ed8;
+		--secondary-color: #3b82f6;
+		--text-color: #1f2937;
+		--text-light: #6b7280;
+		--light-bg: #f9fafb;
+		--border-color: #e5e7eb;
+		--gradient-from: #3b82f6;
+		--gradient-to: #2563eb;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: white;
+		color: var(--text-color);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		line-height: 1.6;
+	}
+
+	/* Ad Container Styles */
+	.ad-container {
+		max-width: 1200px;
+		margin: 2rem auto;
+		text-align: center;
+		padding: 1rem;
+		background: var(--light-bg);
+		border-radius: 0.5rem;
+		border: 1px solid var(--border-color);
+	}
+
+	.ad-label {
+		font-size: 0.75rem;
+		color: var(--text-light);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.5rem;
+	}
+
+	.top-ad {
+		margin-bottom: 2rem;
+	}
+
+	.bottom-ad {
+		margin-top: 2rem;
+	}
+
+	/* Rest of the styles remain the same */
+	.header {
+		background: white;
+		border-bottom: 1px solid var(--border-color);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		backdrop-filter: blur(8px);
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	nav {
+		padding: 1rem 0;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	nav .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1.5rem;
+	}
+
+	.logo-icon {
+		font-size: 1.75rem;
+	}
+
+	.logo-text {
+		color: var(--text-color);
+	}
+
+	.text-gradient {
+		background: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.nav-links a {
+		color: var(--text-color);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.2s ease;
+	}
+
+	.nav-links a:hover {
+		color: var(--primary-color);
+	}
+
+	.cta-button {
+		background: var(--primary-color);
+		color: white !important;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		transition: background-color 0.2s ease !important;
+	}
+
+	.cta-button:hover {
+		background: var(--primary-dark);
+	}
+
+	footer {
+		background: var(--light-bg);
+		padding: 4rem 0 2rem;
+		margin-top: auto;
+		border-top: 1px solid var(--border-color);
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.footer-section h3 {
+		color: var(--text-color);
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+
+	.footer-section p {
+		color: var(--text-light);
+	}
+
+	.footer-section ul {
+		list-style: none;
+	}
+
+	.footer-section ul li {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-section ul a {
+		color: var(--text-light);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.footer-section ul a:hover {
+		color: var(--primary-color);
+	}
+
+	.footer-bottom {
+		padding-top: 2rem;
+		border-top: 1px solid var(--border-color);
+		text-align: center;
+		color: var(--text-light);
+		font-size: 0.875rem;
+	}
+
+	code {
+		font-family: 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace;
+	}
+
+	@media (max-width: 640px) {
+		.nav-links {
+			gap: 1rem;
+		}
+
+		.logo-text {
+			display: none;
+		}
+
+		.ad-container {
+			margin: 1rem;
+		}
+	}
+</style>

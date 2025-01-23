@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: "Introduction to Python",
+    slug: "introduction-to-python",
+    description: "Learn what Python is, why it's popular, and how to get started with this beginner-friendly programming language.",
+    icon: "🚀"
+  },
+  {
+    title: "Python Basics",
+    slug: "python-basics",
+    description: "Understand the fundamentals of Python programming including variables, data types, and your first Python program.",
+    icon: "📚"
+  },
+  {
+    title: "Basic Arithmetic Operations",
+    slug: "basic-arithmetic-operations",
+    description: "Master Python's arithmetic operators and perform basic mathematical calculations.",
+    icon: "🔢"
+  }
+];
+---
+
+<Layout title="Python Programming Tutorial Blog">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Master Python Programming</h1>
+        <p class="subtitle">A comprehensive, step-by-step guide to becoming a Python developer</p>
+        <div class="hero-buttons">
+          <a href="/blog/introduction-to-python" class="primary-button">Start Learning</a>
+          <a href="#tutorials" class="secondary-button">View Tutorials</a>
+        </div>
+        <div class="hero-features">
+          <div class="feature">
+            <span class="feature-icon">📚</span>
+            <span>Beginner Friendly</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">💻</span>
+            <span>Practical Examples</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🎯</span>
+            <span>Step-by-Step</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="tutorials" id="tutorials">
+      <div class="container">
+        <h2>Python Tutorials</h2>
+        <p class="section-description">Start your journey from the basics to advanced Python concepts</p>
+        <div class="tutorial-grid">
+          {posts.map(post => (
+            <article class="tutorial-card">
+              <div class="card-icon">{post.icon}</div>
+              <div class="card-content">
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+                <a href={`/blog/${post.slug}`} class="card-link">
+                  Start Learning
+                  <span class="arrow">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .primary-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  .primary-button:hover {
+    background: var(--primary-dark);
+  }
+
+  .secondary-button {
+    background: white;
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+  }
+
+  .secondary-button:hover {
+    background: var(--light-bg);
+    border-color: var(--primary-color);
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+
+  .tutorials {
+    padding: 6rem 0;
+  }
+
+  .tutorials h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+  }
+
+  .tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .tutorial-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.2s ease;
+  }
+
+  .tutorial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+  }
+
+  .card-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .card-link:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-features {
+      gap: 1rem;
+    }
+
+    .tutorials {
+      padding: 4rem 0;
+    }
+  }
+</style>
