@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "astro dev",       // Start development server (for local development)
-    "build": "astro build",   // Build project for production
-    "preview": "astro preview" // Preview built project (for production-like preview)
+    "dev": "astro dev", 
+    "build": "astro build",
+    "preview": "astro preview"
   }
 }
