@@ -1,14 +1,7 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "dependencies": {
-    "astro": "^4.15.3"
+    "dev": "astro dev",       // Start development server (for local development)
+    "build": "astro build",   // Build project for production
+    "preview": "astro preview" // Preview built project (for production-like preview)
   }
 }
